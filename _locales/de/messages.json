@@ -1,0 +1,73 @@
+{
+  "extensionName": {
+    "message": "HSHB OpenSpaceMelder",
+    "description": "Name of the extension."
+  },
+
+  "extensionDescription": {
+    "message": "OpenSpaceMelder des Hackerspace Bremen e.V.",
+    "description": "Description of the extension."
+  },
+
+  "notificationTitle": {
+    "message": "HSHB OpenSpaceMelder",
+    "description": "Title of the notification."
+  },
+
+  "spaceOpenMessage": {
+    "message": "Der Space ist nun geöffnet",
+    "description": "The 'space is now open' string."
+  },
+
+  "spaceClosedMessage": {
+    "message": "Der Space ist nun geschlossen",
+    "description": "The 'space is now closed' string."
+  },
+
+  "errorMessage": {
+    "message": "<strong>Fehler:</strong><br/>$MSG$",
+    "description": "The error message displayed if the space state can not be loaded.",
+    "placeholders": {
+      "msg" : {
+        "content" : "$1",
+        "example" : "Konnte Verbindung zum Server nicht herstellen."
+      }
+    }
+  },
+
+  "unknownError": {
+    "message": "Ein unbekannter Fehler ist aufgetreten",
+    "description": "Error message fallback."
+  },
+
+  "optionsUpdateEveryLabel": {
+    "message": "Aktualisierung",
+    "description": "The label for the dropdown."
+  },
+
+  "optionsOneMinuteLabel": {
+    "message": "jede Minute",
+    "description": "The option for updating every minute."
+  },
+
+  "optionsNMinutesLabel": {
+    "message": "alle $N$ Minuten",
+    "description": "The options for all other update times.",
+    "placeholders": {
+      "n" : {
+        "content" : "$1",
+        "example" : "5"
+      }
+    }
+  },
+
+  "optionsSendNotifications": {
+    "message": "Desktopbenachrichtigungen anzeigen",
+    "description": "The option to send desktop notifications."
+  },
+
+  "optionsSendMessageNotifications": {
+    "message": "Desktopbenachrichtigung anzeigen sobald sich der Space-Status ändert",
+    "description": "The option to send desktop notifications once the message changes."
+  }
+}

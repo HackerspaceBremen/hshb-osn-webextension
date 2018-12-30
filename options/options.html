@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HSHB OSM options</title>
+</head>
+<body>
+
+<form>
+    <label for="update-timer" id="msg-update-every"></label>
+    <select id="update-timer">
+        <option value="1" id="msg-updated-1-min"></option>
+        <option value="5" id="msg-updated-5-min"></option>
+        <option value="10" id="msg-updated-10-min"></option>
+        <option value="15" id="msg-updated-15-min"></option>
+        <option value="30" id="msg-updated-30-min"></option>
+    </select>
+
+    <br>
+
+    <input type="checkbox" id="send-notifications">
+    <label for="send-notifications" id="msg-send-notifications">Benachrichtigungen zeigen</label>
+
+    <br>
+
+    <input type="checkbox" id="send-message-notifications">
+    <label for="send-message-notifications" id="msg-send-message-notifications">Benachrichtigungen bei Änderung der Nachricht zeigen</label>
+</form>
+
+<script src="../polyfill-0.3.1.js"></script>
+<script src="../utils.js"></script>
+<script src="options.js"></script>
+</body>
+</html>

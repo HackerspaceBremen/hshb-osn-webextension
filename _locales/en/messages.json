@@ -1,0 +1,73 @@
+{
+  "extensionName": {
+    "message": "HSHB OpenSpaceNotifier",
+    "description": "Name of the extension."
+  },
+
+  "extensionDescription": {
+    "message": "Displays the OpenSpaceMessage in your browser and can notify you on changes.",
+    "description": "Description of the extension."
+  },
+
+  "notificationTitle": {
+    "message": "HSHB OpenSpaceNotifier",
+    "description": "Title of the notification."
+  },
+
+  "spaceOpenMessage": {
+    "message": "The space is now open",
+    "description": "The 'space is now open' string."
+  },
+
+  "spaceClosedMessage": {
+    "message": "The space is now closed",
+    "description": "The 'space is now closed' string."
+  },
+
+  "errorMessage": {
+    "message": "<strong>Error:</strong><br/>$MSG$",
+    "description": "The error message displayed if the space state can not be loaded.",
+    "placeholders": {
+      "msg" : {
+        "content" : "$1",
+        "example" : "Could not establish connection to server."
+      }
+    }
+  },
+
+  "unknownError": {
+    "message": "An unknown error occurred",
+    "description": "Error message fallback."
+  },
+
+  "optionsUpdateEveryLabel": {
+    "message": "Update",
+    "description": "The label for the dropdown."
+  },
+
+  "optionsOneMinuteLabel": {
+    "message": "every minute",
+    "description": "The option for updating every minute."
+  },
+
+  "optionsNMinutesLabel": {
+    "message": "every $N$ minutes",
+    "description": "The options for all other update times.",
+    "placeholders": {
+      "n" : {
+        "content" : "$1",
+        "example" : "5"
+      }
+    }
+  },
+
+  "optionsSendNotifications": {
+    "message": "Send desktop notifications",
+    "description": "The option to send desktop notifications."
+  },
+
+  "optionsSendMessageNotifications": {
+    "message": "Send desktop notifications when message changes",
+    "description": "The option to send desktop notifications once the message changes."
+  }
+}

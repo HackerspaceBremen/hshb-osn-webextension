@@ -1,0 +1,48 @@
+* {
+    font-family: Arial, sans-serif;
+    font-size: 12pt;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-width: 400px;
+}
+
+h1 {
+    font-size: 16pt;
+    font-weight: bold;
+    text-align: center;
+    margin: 0 0 0.4em 0;
+}
+
+#error-content {
+    background-color: #ff917f;
+    border: red solid 2px;
+}
+
+.padding {
+    padding: 0.5em;
+}
+
+.open {
+    background-color: rgb(0, 74, 79);
+    color: #a6d2a2;
+}
+
+.closed {
+    background-color: rgb(27, 10, 2);
+    color: rgb(255, 69, 11);
+}
+
+.open .title {
+    text-shadow: 1px 1px 2px black, 0 0 0.85em orange, 0 0 0.2em green;
+}
+
+.closed .title {
+    text-shadow: 1px 1px 2px black, 0 0 0.85em orange, 0 0 0.2em red;
+}
+
+.hidden {
+    display: none;
+}
