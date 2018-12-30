@@ -10,7 +10,7 @@ A WebExtension for the OpenSpaceNotifier of the Hackerspace Bremen e.V.
 
 The [original WebExtension](https://github.com/HackerspaceBremen/osn_chrome_ext) only works in Google Chrome, this Extension works in
 
-- Firefox
+- Firefox (https://addons.mozilla.org/de/firefox/addon/hshb-openspacenotifier/)
 - Chromium
 - Google Chrome
 
