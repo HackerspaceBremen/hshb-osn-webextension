@@ -1,3 +1,5 @@
+"use strict";
+
 const spaceOpenMsg = browser.i18n.getMessage("spaceOpenMessage");
 const spaceClosedMsg = browser.i18n.getMessage("spaceClosedMessage");
 
@@ -38,49 +40,70 @@ function updateInterval(time) {
     }, milliseconds);
 }
 
+function sendNotification(spaceOpen, messageChanged, spaceMessage) {
+    if (spaceOpen !== spaceStatus.open || spaceStatus.error || (sendMessageNotifications && messageChanged)) {
+        let message = spaceOpen ? spaceOpenMsg : spaceClosedMsg;
+        if (spaceMessage) {
+            message += ":\n" + spaceMessage;
+        }
+
+        browser.notifications.create({
+            "type": "basic",
+            "iconUrl": spaceOpen ? "icons/state_open.svg" : "icons/state_closed.svg",
+            "title": browser.i18n.getMessage("notificationTitle"),
+            "message": message
+        });
+    }
+}
+
+function escapeHtml(unsafe) {
+    return unsafe
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+}
+
+function processResponse(request) {
+    try {
+        let jsonObj = JSON.parse(request.responseText);
+        let spaceOpen = jsonObj.open;
+        let ST2message = jsonObj.RESULT.ST2.trim();
+        let ST5message = jsonObj.RESULT.ST5.trim();
+        let spaceMessage = escapeHtml(ST2message);
+        let notificationMessage = ST2message;
+        if (ST5message) {
+            spaceMessage += "<br>" + escapeHtml(ST5message);
+            notificationMessage += " - " + ST5message;
+        }
+        let messageChanged = spaceMessage !== spaceStatus.message;
+
+        if (sendNotifications) {
+            sendNotification(spaceOpen, messageChanged, notificationMessage);
+        }
+
+        browser.browserAction.setIcon({
+            path: {
+                48: spaceOpen ? "icons/state_open.svg" : "icons/state_closed.svg",
+                96: spaceOpen ? "icons/state_open.svg" : "icons/state_closed.svg",
+            }
+        });
+
+        spaceStatus.open = spaceOpen;
+        spaceStatus.error = false;
+        spaceStatus.message = spaceMessage;
+    } catch (e) {
+        spaceStatus.error = true;
+    }
+}
+
 function checkSpaceStatus() {
     let request = new XMLHttpRequest();
 
     request.onreadystatechange = function () {
         if (request.readyState === 4) {
-            try {
-                let jsonObj = JSON.parse(request.responseText);
-                let spaceOpen = jsonObj.open;
-                let spaceMessage = jsonObj.status.trim();
-                let ST2message = jsonObj.RESULT.ST2.trim();
-                if (!spaceMessage && ST2message) {
-                    spaceMessage = ST2message;
-                }
-                let messageChanged = spaceMessage !== spaceStatus.message;
-
-                if (sendNotifications) {
-                    if (spaceOpen !== spaceStatus.open || spaceStatus.error || (sendMessageNotifications && messageChanged)) {
-                        let message = spaceOpen ? spaceOpenMsg : spaceClosedMsg;
-                        if (spaceMessage) {
-                            message += ":\n" + spaceMessage;
-                        }
-
-                        browser.notifications.create({
-                            "type": "basic",
-                            "iconUrl": spaceOpen ? "icons/state_open.svg" : "icons/state_closed.svg",
-                            "title": browser.i18n.getMessage("notificationTitle"),
-                            "message": message
-                        });
-                    }
-                }
-
-                browser.browserAction.setIcon({
-                    path: {
-                        48: spaceOpen ? "icons/state_open.svg" : "icons/state_closed.svg"
-                    }
-                });
-
-                spaceStatus.open = spaceOpen;
-                spaceStatus.error = false;
-                spaceStatus.message = spaceMessage;
-            } catch (e) {
-                spaceStatus.error = true;
-            }
+            processResponse(request);
         }
     };
 

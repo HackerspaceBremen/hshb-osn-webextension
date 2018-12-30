@@ -1,3 +1,5 @@
+"use strict";
+
 function saveOptions() {
     let updateTime = document.getElementById("update-timer").value;
     let notifications = document.getElementById("send-notifications").checked;

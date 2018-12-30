@@ -1,11 +1,4 @@
-function escapeHtml(unsafe) {
-    return unsafe
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#039;");
-}
+"use strict";
 
 function error(msg) {
     document.getElementById("error-content").innerHTML = browser.i18n.getMessage("errorMessage", msg);
@@ -21,7 +14,7 @@ function ok(spaceStatus) {
         document.getElementById("popup-content").classList.add("open");
         let displayMessage = "<h1 class='title'>" + spaceOpenMsg + "</h1>";
         if (spaceStatus.message) {
-            displayMessage += escapeHtml(spaceStatus.message);
+            displayMessage += spaceStatus.message;
         }
         document.getElementById("popup-content").innerHTML = displayMessage;
     } else {
@@ -29,7 +22,7 @@ function ok(spaceStatus) {
         document.getElementById("popup-content").classList.add("closed");
         let displayMessage = "<h1 class='title'>" + spaceClosedMsg + "</h1>";
         if (spaceStatus.message) {
-            displayMessage += escapeHtml(spaceStatus.message);
+            displayMessage += spaceStatus.message;
         }
         document.getElementById("popup-content").innerHTML = displayMessage;
     }
