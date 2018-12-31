@@ -69,8 +69,12 @@ function processResponse(request) {
     try {
         let jsonObj = JSON.parse(request.responseText);
         let spaceOpen = jsonObj.open;
-        let ST2message = jsonObj.RESULT.ST2.trim();
-        let ST5message = jsonObj.RESULT.ST5.trim();
+        let ST2message = jsonObj.status;
+        let ST5message = "";
+        if (jsonObj.hasOwnProperty("RESULT")) {
+            ST2message = jsonObj.RESULT.hasOwnProperty("ST2") ? jsonObj.RESULT.ST2.trim() : ST2message;
+            ST5message = jsonObj.RESULT.hasOwnProperty("ST5") ? jsonObj.RESULT.ST5.trim() : ST5message;
+        }
         let spaceMessage = escapeHtml(ST2message);
         let notificationMessage = ST2message;
         if (ST5message) {
@@ -95,6 +99,12 @@ function processResponse(request) {
         spaceStatus.message = spaceMessage;
     } catch (e) {
         spaceStatus.error = true;
+        browser.browserAction.setIcon({
+            path: {
+                48: "icons/state_error.svg",
+                96: "icons/state_error.svg",
+            }
+        });
     }
 }
 
