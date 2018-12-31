@@ -9,6 +9,15 @@ A WebExtension for the OpenSpaceNotifier of the Hackerspace Bremen e.V.
 
 - [ccoors](https://www.ccoors.de/)
 
+# Build
+
+Install `web-ext` and run this in your checked out repo:
+
+    $ cd webextension
+    $ web-ext build --overwrite-dest
+
+The extension can then be found in `webextension/web-ext-artifacts`.
+
 # Why?
 
 The [original WebExtension](https://github.com/HackerspaceBremen/osn_chrome_ext) only works in Google Chrome, this Extension works in
