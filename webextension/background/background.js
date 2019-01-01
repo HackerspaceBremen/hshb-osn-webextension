@@ -65,6 +65,10 @@ function escapeHtml(unsafe) {
         .replace(/'/g, "&#039;");
 }
 
+function cleanupSpaces(string) {
+    return string.replace(/\s\s+/g, ' ');
+}
+
 function processResponse(request) {
     try {
         let jsonObj = JSON.parse(request.responseText);
@@ -81,6 +85,8 @@ function processResponse(request) {
             spaceMessage += "<br>" + escapeHtml(ST5message);
             notificationMessage += " - " + ST5message;
         }
+        spaceMessage = cleanupSpaces(spaceMessage);
+        notificationMessage = cleanupSpaces(notificationMessage);
         let messageChanged = spaceMessage !== spaceStatus.message;
 
         if (sendNotifications) {
