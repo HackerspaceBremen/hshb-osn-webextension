@@ -1,30 +1,39 @@
 "use strict";
 
+function setNodeMessage(node, title, text) {
+    node.classList.remove("hidden");
+    node.textContent = "";
+    const titleNode = document.createElement("h1");
+    titleNode.innerText = title;
+    node.appendChild(titleNode);
+    if (text) {
+        const textNode = document.createElement("p");
+        textNode.innerText = text;
+        node.appendChild(textNode);
+    }
+}
+
 function error(msg) {
-    document.getElementById("error-content").innerHTML = browser.i18n.getMessage("errorMessage", msg);
+    setNodeMessage(document.getElementById("error-content"), browser.i18n.getMessage("errorMessage"), msg);
     document.getElementById("error-content").classList.remove("hidden");
     document.getElementById("popup-content").classList.add("hidden");
 }
 
 function ok(spaceStatus) {
+    const popupContent = document.getElementById("popup-content");
+    popupContent.classList.add("hidden");
+    document.getElementById("error-content").classList.add("hidden");
+
     if (spaceStatus.error || spaceStatus.open === null) {
         error(spaceErrorMsg);
     } else if (spaceStatus.open) {
-        document.getElementById("popup-content").classList.remove("closed");
-        document.getElementById("popup-content").classList.add("open");
-        let displayMessage = "<h1 class='title'>" + spaceOpenMsg + "</h1>";
-        if (spaceStatus.message) {
-            displayMessage += spaceStatus.message;
-        }
-        document.getElementById("popup-content").innerHTML = displayMessage;
+        popupContent.classList.remove("closed");
+        popupContent.classList.add("open");
+        setNodeMessage(popupContent, spaceOpenMsg, spaceStatus.message);
     } else {
-        document.getElementById("popup-content").classList.remove("open");
-        document.getElementById("popup-content").classList.add("closed");
-        let displayMessage = "<h1 class='title'>" + spaceClosedMsg + "</h1>";
-        if (spaceStatus.message) {
-            displayMessage += spaceStatus.message;
-        }
-        document.getElementById("popup-content").innerHTML = displayMessage;
+        popupContent.classList.remove("open");
+        popupContent.classList.add("closed");
+        setNodeMessage(popupContent, spaceClosedMsg, spaceStatus.message);
     }
 }
 
