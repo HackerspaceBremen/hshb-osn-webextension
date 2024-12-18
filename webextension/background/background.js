@@ -72,25 +72,13 @@ function cleanupSpaces(string) {
 function processResponse(request) {
     try {
         let jsonObj = JSON.parse(request.responseText);
-        let spaceOpen = jsonObj.open;
-        let ST2message = jsonObj.status;
-        let ST5message = "";
-        if (jsonObj.hasOwnProperty("RESULT")) {
-            ST2message = jsonObj.RESULT.hasOwnProperty("ST2") ? jsonObj.RESULT.ST2.trim() : ST2message;
-            ST5message = jsonObj.RESULT.hasOwnProperty("ST5") ? jsonObj.RESULT.ST5.trim() : ST5message;
-        }
-        let spaceMessage = escapeHtml(ST2message);
-        let notificationMessage = ST2message;
-        if (ST5message) {
-            spaceMessage += "<br>" + escapeHtml(ST5message);
-            notificationMessage += " - " + ST5message;
-        }
-        spaceMessage = cleanupSpaces(spaceMessage);
-        notificationMessage = cleanupSpaces(notificationMessage);
+        let spaceOpen = !!jsonObj.state?.open;
+        let spaceMessage = cleanupSpaces(escapeHtml(jsonObj.state?.message));
+
         let messageChanged = spaceMessage !== spaceStatus.message;
 
         if (sendNotifications) {
-            sendNotification(spaceOpen, messageChanged, notificationMessage);
+            sendNotification(spaceOpen, messageChanged, spaceMessage);
         }
 
         browser.browserAction.setIcon({
@@ -133,7 +121,7 @@ function checkSpaceStatus() {
     if (requestLanguage !== "de" && requestLanguage !== "en") {
         requestLanguage = "de";
     }
-    request.open("GET", "https://hackerspacehb.appspot.com/v2/status?format=" + requestLanguage + "&htmlEncoded=false", true);
+    request.open("GET", "https://spacemanager.hackerspace-bremen.de/api/v1/spaceapi", true);
     request.send();
 }
 

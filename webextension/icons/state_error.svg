@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
    id="svg8"
    version="1.1"
    viewBox="0 0 12.7 12.7"
    height="48"
-   width="48">
+   width="48"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
   <defs
      id="defs2">
     <linearGradient
@@ -31,7 +31,8 @@
        y1="290.64998"
        x1="-1.2715658e-07"
        id="linearGradient951"
-       xlink:href="#linearGradient949-4" />
+       xlink:href="#linearGradient949-4"
+       gradientTransform="translate(0,-284.29998)" />
     <linearGradient
        gradientUnits="userSpaceOnUse"
        y2="290.64999"
@@ -40,7 +41,7 @@
        x1="-1.2715658e-07"
        id="linearGradient951-3"
        xlink:href="#linearGradient949-4"
-       gradientTransform="translate(-12.7,-581.3)" />
+       gradientTransform="translate(-12.7,-297.00002)" />
     <linearGradient
        gradientUnits="userSpaceOnUse"
        y2="290.64999"
@@ -49,7 +50,7 @@
        x1="-1.2715658e-07"
        id="linearGradient951-9"
        xlink:href="#linearGradient949-4"
-       gradientTransform="translate(284.29997,-297)" />
+       gradientTransform="translate(-1e-5,-297)" />
   </defs>
   <metadata
      id="metadata5">
@@ -59,17 +60,45 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
+  <rect
+     ry="0"
+     rx="0"
+     y="7.792969e-06"
+     x="-1.2715658e-07"
+     height="12.699986"
+     width="0.52916682"
+     id="rect943"
+     style="fill:url(#linearGradient951);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.528271;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke" />
+  <rect
+     transform="scale(-1)"
+     ry="0"
+     rx="0"
+     y="-12.699989"
+     x="-12.700001"
+     height="12.699986"
+     width="0.52916682"
+     id="rect943-2"
+     style="fill:url(#linearGradient951-3);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.528271;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke" />
+  <rect
+     transform="rotate(90)"
+     ry="0"
+     rx="0"
+     y="-12.699986"
+     x="7.792969e-06"
+     height="12.699986"
+     width="0.52916682"
+     id="rect943-9"
+     style="fill:url(#linearGradient951-9);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.528271;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke" />
   <g
-     transform="translate(0,-284.29998)"
-     id="layer1">
+     id="g1">
     <g
-       id="g851">
+       id="g851"
+       transform="translate(0,-284.29998)">
       <rect
-         style="fill:#004a4f;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.94828182;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
+         style="fill:#004a4f;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.948282;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
          id="rect1368"
          width="12.7"
          height="4.2333417"
@@ -92,44 +121,10 @@
          x="0"
          y="284.29999" />
     </g>
-    <rect
-       ry="0"
-       rx="0"
-       y="284.29999"
-       x="-1.2715658e-07"
-       height="12.699986"
-       width="0.52916682"
-       id="rect943"
-       style="fill:url(#linearGradient951);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.52827066;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke" />
-    <rect
-       transform="scale(-1)"
-       ry="0"
-       rx="0"
-       y="-296.99997"
-       x="-12.700001"
-       height="12.699986"
-       width="0.52916682"
-       id="rect943-2"
-       style="fill:url(#linearGradient951-3);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.52827066;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke" />
-    <rect
-       transform="rotate(90)"
-       ry="0"
-       rx="0"
-       y="-12.699986"
-       x="284.29999"
-       height="12.699986"
-       width="0.52916682"
-       id="rect943-9"
-       style="fill:url(#linearGradient951-9);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.52827066;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke" />
-    <text
+    <path
+       style="font-weight:bold;font-size:14.1111px;line-height:1.25;font-family:Roboto;-inkscape-font-specification:'Roboto Bold';letter-spacing:0px;word-spacing:0px;fill:#ffffff;stroke-width:0.264583"
+       d="m 5.3268049,8.3137104 q 0,-0.964626 0.2342663,-1.5365114 0.2342663,-0.5718854 0.854383,-1.1231003 0.6270069,-0.558105 0.8337125,-0.9026143 0.2067055,-0.3513995 0.2067055,-0.7372499 0,-1.1644413 -1.0748689,-1.1644413 -0.5098738,0 -0.8199321,0.3169485 Q 5.257903,3.4768 5.2441227,4.0280149 H 3.2459688 q 0.01378,-1.3160255 0.8474929,-2.0601655 0.8406026,-0.7441401 2.2875416,-0.7441401 1.4607193,0 2.2668711,0.7096892 0.8061517,0.7027989 0.8061517,1.9912636 0,0.5856658 -0.2618271,1.1093199 Q 8.930372,5.5507459 8.2758043,6.184643 L 7.7176993,6.7151873 Q 7.1940452,7.2181709 7.1182531,7.893409 L 7.0906924,8.3137104 Z M 5.1269895,10.428997 q 0,-0.4616421 0.3100584,-0.7579201 0.3169485,-0.3031681 0.8061517,-0.3031681 0.4892032,0 0.7992615,0.3031681 0.3169485,0.296278 0.3169485,0.7579201 0,0.454753 -0.3100583,0.751031 -0.3031682,0.296278 -0.8061517,0.296278 -0.5029836,0 -0.8130419,-0.296278 Q 5.1269895,10.88375 5.1269895,10.428997 Z"
        id="text832"
-       y="295.6936"
-       x="2.9359105"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.11111069px;line-height:1.25;font-family:Vollkorn;-inkscape-font-specification:Vollkorn;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       xml:space="preserve"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Roboto;-inkscape-font-specification:'Roboto Bold';fill:#ffffff;fill-opacity:1;stroke-width:0.26458332"
-         y="295.6936"
-         x="2.9359105"
-         id="tspan830">?</tspan></text>
+       aria-label="?" />
   </g>
 </svg>
